@@ -3,8 +3,8 @@ function scrambleWord(word) {
     //We are only shuffling letters at position 1 to n-2. (For String 0...n-1 (n = length))
     let n = word.length
     var wordAsArray = word.split('')
-    for(i = 0; i < n-2; i++) {
-        j = getRandomInteger(n, 0)
+    for(i = 1; i < n-3; i++) {
+        j = getRandomInteger(n-2, 1)
         swap(i, j, wordAsArray)
         console.log(wordAsArray)
     }
