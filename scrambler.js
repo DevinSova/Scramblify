@@ -11,7 +11,6 @@ function scrambleWord(word) {
         j = getRandomInteger(n-2, 1)
         swap(i, j, wordAsArray)
     }
-    //console.log(wordAsArray.join(''))
     return wordAsArray.join('')
  }
  
