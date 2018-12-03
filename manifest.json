@@ -1,0 +1,14 @@
+{
+    "manifest_version": 2,
+    "name": "Scramblify",
+    "version": "0.5",
+  
+    "description": "Scramble every word on the screen but still keep it readable.",
+  
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["./scrambler.js", "./substitute.js"]
+      }
+    ]
+  }
