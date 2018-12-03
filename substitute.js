@@ -1,3 +1,6 @@
+/**
+ * @param {node}    node    Node from page
+ */
 function updateText(node) {
     if(node.nodeType === Node.TEXT_NODE) {
 
