@@ -53,4 +53,4 @@ function main() {
     createObserver()
 }
 
-main()
+//main()
