@@ -9,7 +9,8 @@ Todo:
 - [X] Determine what elements to scramble
 - [X] Break down elements into words to scramble
 - [X] Testing
-- [ ] Create icon
+- [X] Create icon
+- [ ] Add Taskbar Button to Bring up menu with Enable/Disable Button
 
 Possible Later Additions:
 - [ ] Only scramble non-names. (Dictionary only words)

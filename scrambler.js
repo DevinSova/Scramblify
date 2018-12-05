@@ -21,11 +21,14 @@ function scrambleWord(word) {
 function scrambleText(text) {
     //Can't scramble words of length 3 or less.
     //Only scramble words with Alphabetical letters.
+    //Don't scramble urls or emails
     //Regex is used to check
     words = text.split(' ');
-    const regexPattern = /[A-z][A-z]+[A-z]/g;
+    const wordRegexPattern = /[A-z][A-z]+[A-z]/g;
+    const urlRegexPattern = /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/gm
+    const emailRegexPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     for(let i = 0; i < words.length; i++) {
-        if(words[i].match(regexPattern)) {
+        if(words[i].match(wordRegexPattern) && !words[i].match(urlRegexPattern) && !words[i].match(emailRegexPattern)) {
             words[i] = scrambleWord(words[i]);
         }
     }
