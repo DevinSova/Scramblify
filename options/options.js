@@ -1,14 +1,17 @@
-function saveOptions(e) {
+function saveOptions(enabledOption) {
     e.preventDefault();
-    browser.storage.sync.set({
-      enabled: e
+    storage.sync.set({
+      enabled: enabledOption
     });
   }
   
 function restoreOptions() {
 
     function setCurrentChoice(result) {
-        
+        if(result === 'true') 
+            document.getElementById("switch").checked = true;
+        else if(result === 'false')
+            document.getElementById("switch").checked = false;
     }
 
     function onError(error) {
@@ -17,15 +20,11 @@ function restoreOptions() {
 
     var getting = browser.storage.sync.get("enabled");
     getting.then(setCurrentChoice, onError);
-
-    if(getting === 'true') 
-        document.getElementById("switch").checked = true;
-    else if(getting === 'false')
-        document.getElementById("switch").checked = false;
 }
 
 document.addEventListener("DOMContentLoaded", restoreOptions);
-var checkbox = document.querySelector("input[id=switch]");
+
+var checkbox = document.getElementById("switch");
 checkbox.addEventListener('change', function() {
     if(this.checked) {
         console.log("Enabled")
