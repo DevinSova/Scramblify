@@ -1,4 +1,6 @@
 /**
+ * Recursively runs @see scrambleText on 
+ * this node and all of it's children
  * @param {node}    node    Node from page
  */
 function updateText(node) {
@@ -20,6 +22,10 @@ function updateText(node) {
     }
 }
 
+/**
+ * Creates an Observer that looks for new text
+ * and updates it with the scrambled version
+ */
 function createObserver() {
     const observer = new MutationObserver((mutations) => {
         mutations.forEach((mutation) => {
@@ -37,6 +43,9 @@ function createObserver() {
     });
 }
 
+/**
+ * Main Method of the Browser Extension
+ */
 function main() {
     //Update the current page text
     //Create an Observer for new page text
