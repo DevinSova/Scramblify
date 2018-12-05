@@ -54,3 +54,5 @@ function main() {
 }
 
 //main()
+//browser.browserAction.onClicked.addListener(main);
+
