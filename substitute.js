@@ -15,10 +15,11 @@ function updateText(node) {
         content = scrambleText(content);
         node.textContent = content;
     }
-
-    //Recursively Call on Child Nodes
-    for(let i = 0; i < node.childNodes.length; i++) {
-        updateText(node.childNodes[i]);
+    else {
+        //Recursively Call on Child Nodes
+        for(let i = 0; i < node.childNodes.length; i++) {
+            updateText(node.childNodes[i]);
+        }
     }
 }
 
@@ -53,6 +54,6 @@ function main() {
     createObserver()
 }
 
-//main()
-//browser.browserAction.onClicked.addListener(main);
+main()
+browser.browserAction.onClicked.addListener(main);
 
